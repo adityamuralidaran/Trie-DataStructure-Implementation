@@ -3,6 +3,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class TrieDS {
+
+    //Definition of a Node in Trie data structure
     private class TrieNode{
         HashMap<Character,TrieNode> hash;
         boolean isWordEnd;
@@ -12,11 +14,13 @@ public class TrieDS {
         }
     }
 
+    //Declaration of root of Trie data structure
     public final TrieNode root;
     public TrieDS(){
         root = new TrieNode();
     }
 
+    //function to insert a word in Trie data structure. Time-Complexity: O(length of word)
     public boolean insert(String word){
         try{
             char[] wordArray = word.toCharArray();
@@ -29,6 +33,7 @@ public class TrieDS {
         }
     }
 
+    // Recursive helper function to insert a word.
     private void insertHelper(char[] wordArray, int idx, TrieNode node){
         if(idx == wordArray.length){
             node.isWordEnd = true;
@@ -44,12 +49,14 @@ public class TrieDS {
         }
     }
 
+    // Function to search for a complete word in Trie data structure. Time-Complexity: O(length of word)
     public boolean searchWord(String word){
         char[] wordArray = word.toCharArray();
         boolean isSuccess = swHelper(wordArray,0,root);
         return isSuccess;
     }
 
+    // Recursive helper function to search for a word.
     private boolean swHelper(char[] wordArray, int idx, TrieNode node){
         if(idx == wordArray.length && node.isWordEnd){
             return true;
