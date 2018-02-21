@@ -1,11 +1,15 @@
 public class Solution {
     public static void main(String[] args){
         TrieDS wordList = new TrieDS();
-        wordList.insert("abc");
-        wordList.insert("abgl");
-        wordList.insert("xyz");
-        System.out.println(wordList.searchWord("abc"));
-        System.out.println(wordList.searchWord("xyzz"));
-        System.out.println(wordList.searchWord("abgl"));
+        wordList.insert("preempt");
+        wordList.insert("landing");
+        wordList.insert("chopper");
+        System.out.println(wordList.searchWord("pre"));
+        System.out.println(wordList.searchWord("landing"));
+        System.out.println(wordList.searchWord("chopper"));
+
+        System.out.println(wordList.prefixSearch("pre"));
+        System.out.println(wordList.prefixSearch("land"));
+        System.out.println(wordList.prefixSearch("choppers"));
     }
 }
